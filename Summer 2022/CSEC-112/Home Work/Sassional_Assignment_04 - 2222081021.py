@@ -31,28 +31,29 @@ for y in b:
         count += 1
 print(count)
 
-# TASK-3: How many even pairs creatable from a number
-print("""\n\nTASK-3: HOW MANY EVEN PAIRS CREATABLE FROM A NUMBER
+# TASK-3: 4A "Watermellon" problem in codeforces
+print("""\n\nTASK-3: 4A "WATERMELLON' PROBLEM IN CODEFORCES
 ===============================================================================""")
 
-n = int(input("Enter a number: "))
+n = int(input())
 
-if n % 2 != 0 or n < 6:
-    print("Not possible by this number.")
+a = [sorted([i, n-i]) for i in range(1, n) if i % 2 == 0 and (n-i) % 2 == 0]
+b = []
+[b.append(i) for i in a if i not in b]
+
+if len(b) >= 1:
+    print("YES")
 else:
-    a = [sorted([i, n - i]) for i in range(2, n, 2)]
-    b = []
-    [b.append(i) for i in  a if i not in b]
-    print(len(b))
+    print("NO")
 
-# TASK-4: "Taxi" Problem in Codeforces
-print("""\n\nTASK-4: "TEXI" PROBLEM IN CODEFORCES
+# TASK-4: 158B "Taxi" Problem in Codeforces
+print("""\n\nTASK-4: 158B "TEXI" PROBLEM IN CODEFORCES
 ===============================================================================""")
 
 from math import ceil
 
-n = int(input("Enter the number of groups: "))
-s = input("Enter group member numbers of each group using space: ").split()
+n = int(input())
+s = input().split()
 s = [int(i) for i in s]
 
 g_1, g_2, g_3, g_4 = [], [], [], []
