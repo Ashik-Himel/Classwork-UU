@@ -1,38 +1,38 @@
-# TASK-1: Letter count in a word.
-print("""TASK-1: LETTER COUNT IN A WORD
+# TASK-1: 71A "Way Too Long Words" problem in codeforces
+print("""TASK-1: 71A "WAY TOO LONG WORDS" PROBLEM IN CODEFORCES
 ===============================================================================""")
 
-word = input("Write a word: ")
+n = int(input())
+w_list = []
+for x in range(n):
+  a = input()
+  w_list.append(a)
 
-count = 0
-for x in word: count += 1
+for x in w_list:
+  if len(x) <= 10: print(x)
+  elif len(x) >= 11: print(x[0], (len(x) - 2), x[-1], sep="")
 
-if count <= 10: print(word)
-elif count == 11: print(word[0], count - 1)
-elif count > 11: print(word[0], count - 2, word[-1])
-
-# TASK-2: Count problem solving ability in a group.
-print("""\n\nTASK-2: COUNT PROBLEM SOLVING ABILITY IN A GROUP
+# TASK-2: 231A "Team" problem in codeforces
+print("""\n\nTASK-2: 231A "TEAM" PROBLEM IN CODEFORCES
 ===============================================================================""")
 
-n = int(input("Enter the number of problems: "))
+n = int(input())
 a = []
 for x in range(n):
-    a.append([])
-    a[x].append(int(input("Enter 1st candidate's ability: ")))
-    a[x].append(int(input("Enter 2nd candidate's ability: ")))
-    a[x].append(int(input("Enter 3rd candidate's ability: ")))
+    b = input().split()
+    b = [int(i) for i in b]
+    a.append(b)
 
-b = [a[i][0] + a[i][1] + a[i][2] for i in range(len(a))]
+c = [a[i][0] + a[i][1] + a[i][2] for i in range(len(a))]
 
 count = 0
-for y in b:
+for y in c:
     if y >= 2:
         count += 1
 print(count)
 
-# TASK-3: 4A "Watermellon" problem in codeforces
-print("""\n\nTASK-3: 4A "WATERMELLON' PROBLEM IN CODEFORCES
+# TASK-3: 4A "Watermelon" problem in codeforces
+print("""\n\nTASK-3: 4A "WATERMELON" PROBLEM IN CODEFORCES
 ===============================================================================""")
 
 n = int(input())
