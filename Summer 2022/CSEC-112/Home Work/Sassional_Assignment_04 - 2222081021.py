@@ -86,6 +86,43 @@ if len(g_3) >= 1:
 
 print(ceil(count_g))
 
+# TASK-4: 158B "Taxi" Problem in Codeforces (Without Using List)
+print("""\n\nTASK-4: 158B "TEXI" PROBLEM IN CODEFORCES (WITHOUT USING LIST)
+===============================================================================""")
+
+from math import ceil
+
+n = int(input())
+s = input()
+g_1, g_2, g_3, g_4 = 0, 0, 0, 0
+for i in s:
+    if i == "1": g_1 += 1
+    elif i == "2": g_2 += 1
+    elif i == "3": g_3 += 1
+    elif i == "4": g_4 += 1
+
+count = g_4 + g_2/2
+for i in range(2):
+    if g_2 % 2 != 0 and g_1 >= 1:
+        count += 0.25
+        g_1 -= 1
+for i in range(g_3):
+    if g_3 >= 1 and g_1 >= 1:
+        count += 1
+        g_1 -= 1
+        g_3 -= 1
+for i in range(g_1):
+    if g_1 >= 4:
+        count += 1
+        g_1 -= 4
+if g_1 >= 1:
+    count += 1
+if g_3 >= 1:
+    for i in range(g_3):
+        count += 1
+        
+print(ceil(count))
+
 print("""\n\n===============================================================================
 ===============================================================================""")
 input("Press enter to exit: ")
